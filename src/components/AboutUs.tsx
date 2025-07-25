@@ -167,7 +167,7 @@ export default function AboutUs() {
 
       {/* Team Section */}
       <section className="py-16">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 py-8">
           <motion.h2 
             className="text-4xl font-darker-grotesque font-bold text-cape-cod text-center mb-12"
             initial={{ opacity: 0, y: 30 }}
