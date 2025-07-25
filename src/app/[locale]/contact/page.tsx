@@ -11,7 +11,7 @@ export default function ContactPage() {
     name: '',
     email: '',
     phone: '',
-    countryCode: '+1',
+    countryCode: '+20',
     message: ''
   });
 
@@ -35,7 +35,7 @@ export default function ContactPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto"
+          className="max-w-6xl mx-auto border border-gray-300 rounded-lg p-8"
         >
           {/* Header */}
           <div className="text-center mb-12">
@@ -47,19 +47,19 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-6 gap-12">
             {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-pure-white p-8 rounded-lg shadow-lg border border-cape-cod"
+              className="bg-pure-white p-8 rounded-lg shadow-lg border border-cape-cod col-span-4"
             >
               <h2 className="text-2xl font-bold text-cape-cod mb-6">
                 {t('contact.form.title')}
               </h2>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6 w-full">
                 {/* Name */}
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-cape-cod mb-2">
@@ -169,7 +169,7 @@ export default function ContactPage() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="space-y-8"
+              className="space-y-8 col-span-2"
             >
               <div>
                 <h2 className="text-2xl font-bold text-cape-cod mb-6">

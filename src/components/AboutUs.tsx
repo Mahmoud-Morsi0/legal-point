@@ -1,8 +1,8 @@
 "use client";
 
 import {useTranslations} from 'next-intl';
+import { motion } from 'framer-motion';
 import HeroSection from '@/components/HeroSection';
-
 
 export default function AboutUs() {
   const t = useTranslations();
@@ -27,58 +27,181 @@ export default function AboutUs() {
     { key: 'successRate', label: 'Success Rate' }
   ];
 
+  // Animation variants for values cards
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 50,
+      scale: 0.9
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.6
+      }
+    }
+  };
+
+  const iconVariants = {
+    hover: {
+      scale: 1.2,
+      rotate: 5,
+      transition: {
+        duration: 0.3
+      }
+    }
+  };
+
   return (
     <div className="min-h-screen bg-pure-white">
       {/* Hero Section */}
       <HeroSection />
 
-
       {/* Mission Section */}
       <section className="py-16">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
+          <motion.div 
+            className="max-w-4xl mx-auto text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             <h2 className="text-4xl font-darker-grotesque font-bold text-cape-cod mb-8">
               {t('about.mission.title')}
             </h2>
             <p className="text-xl text-gray-700 leading-relaxed">
               {t('about.mission.description')}
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Values Section */}
-      <section className="bg-pure-mint py-16">
+      <section className="bg-pure-mint pb-16 border-b border-obsidian bg-obsidian min-h-[600px] flex items-center justify-center">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-darker-grotesque font-bold text-cape-cod text-center mb-12">
+          <motion.h2 
+            className="text-4xl font-darker-grotesque font-bold text-cape-cod text-center mb-24"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
             {t('about.values.title')}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value) => (
-              <div key={value.key} className="text-center">
-                <div className="text-5xl mb-4">{value.icon}</div>
-                <h3 className="text-2xl font-darker-grotesque font-bold text-cape-cod mb-4">
+          </motion.h2>
+          
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {values.map((value, index) => (
+              <motion.div 
+                key={value.key} 
+                className="text-center border-2 border-primary  rounded-lg p-6 bg-white shadow-lg hover:shadow-2xl transition-all duration-100 group cursor-pointer hover:bg-obsidian hover:text-pure-white"
+                variants={cardVariants}
+                whileHover={{ 
+                  y: -10,
+                  scale: 1.05,
+                  backgroundColor: 'var(--obsidian)',
+                  color: 'var(--pure-white)',
+                  borderColor: 'var(--obsidian)',
+                  borderWidth: '1px'
+                }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <motion.div 
+                  className="text-6xl mb-6 group-hover:text-pure-mint"
+                  variants={iconVariants}
+                  whileHover="hover"
+                >
+                  {value.icon}
+                </motion.div>
+                
+                <motion.h3 
+                  className="text-2xl font-darker-grotesque font-bold text-cape-cod mb-4 group-hover:text-pure-white transition-colors duration-300"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ delay: 0.2 + index * 0.1 }}
+                  viewport={{ once: true }}
+                >
                   {t(`about.values.items.${value.key}.title`)}
-                </h3>
-                <p className="text-gray-700">
+                </motion.h3>
+                
+                <motion.p 
+                  className="text-gray-700 group-hover:text-gray-200 transition-colors duration-300 leading-relaxed"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ delay: 0.3 + index * 0.1 }}
+                  viewport={{ once: true }}
+                >
                   {t(`about.values.items.${value.key}.description`)}
-                </p>
-              </div>
+                </motion.p>
+                
+                {/* Decorative element */}
+                <motion.div 
+                  className="w-0 h-1 bg-pure-mint mt-4 mx-auto group-hover:w-16 transition-all duration-500"
+                  initial={{ width: 0 }}
+                  whileHover={{ width: "4rem" }}
+                />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Team Section */}
       <section className="py-16">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-darker-grotesque font-bold text-cape-cod text-center mb-12">
+          <motion.h2 
+            className="text-4xl font-darker-grotesque font-bold text-cape-cod text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
             {t('about.team.title')}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {teamMembers.map((member) => (
-              <div key={member.key} className="text-center">
-                <div className="text-6xl mb-4">{member.image}</div>
+          </motion.h2>
+          
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, staggerChildren: 0.2 }}
+            viewport={{ once: true }}
+          >
+            {teamMembers.map((member, index) => (
+              <motion.div 
+                key={member.key} 
+                className="text-center p-6 rounded-lg hover:bg-pure-mint hover:shadow-lg transition-all duration-300"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.2 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05 }}
+              >
+                <motion.div 
+                  className="text-6xl mb-4"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {member.image}
+                </motion.div>
                 <h3 className="text-2xl font-darker-grotesque font-bold text-cape-cod mb-2">
                   {t(`about.team.members.${member.key}.name`)}
                 </h3>
@@ -88,27 +211,42 @@ export default function AboutUs() {
                 <p className="text-gray-600">
                   {t(`about.team.members.${member.key}.description`)}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
-
-            
 
       {/* Stats Section */}
       <section className="bg-cape-cod text-pure-white py-16">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {stats.map((stat) => (
-              <div key={stat.key}>
-                <div className="text-4xl font-darker-grotesque font-bold text-pure-mint mb-2">
+          <motion.div 
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, staggerChildren: 0.1 }}
+            viewport={{ once: true }}
+          >
+            {stats.map((stat, index) => (
+              <motion.div 
+                key={stat.key}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.1 }}
+              >
+                <motion.div 
+                  className="text-4xl font-darker-grotesque font-bold text-pure-mint mb-2"
+                  whileHover={{ scale: 1.2 }}
+                  transition={{ duration: 0.3 }}
+                >
                   {t(`about.stats.${stat.key}`)}
-                </div>
+                </motion.div>
                 <p className="text-lg">{stat.label}</p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>

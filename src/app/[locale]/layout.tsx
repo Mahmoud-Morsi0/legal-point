@@ -15,7 +15,7 @@ const roboto = Roboto({
   subsets: ['latin'] 
 })
 
-const locales = ['en', 'ar'] as const;
+const locales = ['ar', 'en'] as const;
 type Locale = typeof locales[number];
 
 export default async function LocaleLayout({
@@ -37,7 +37,7 @@ export default async function LocaleLayout({
   return (
     <ThemeProvider
       attribute="class"
-      defaultTheme="system"
+      defaultTheme="light"
       enableSystem
       disableTransitionOnChange
     >

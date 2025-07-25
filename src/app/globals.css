@@ -6,9 +6,9 @@
 :root {
   --background-start: #F3FAFF;
   --background-end: #F3FAFF;
-  --pure-mint: #DAFGEF;
+  --pure-mint: #dafgef;
   --cape-cod: #0A2536;
-  --obsidian: #39366D;
+  --obsidian: #114464;
   --pure-white: #F3FAFF;
   --radius: 0.625rem;
   
@@ -51,7 +51,7 @@
   --background-end: #0A2536;
   --pure-mint: #DAFGEF;
   --cape-cod: #0A2536;
-  --obsidian: #39366D;
+  --obsidian: #114464;
   --pure-white: #F3FAFF;
   
   /* Dark mode shadcn/ui variables */
@@ -182,3 +182,9 @@ body {
   color: var(--pure-white);
   border-color: var(--foreground);
 }
+.border-cape-cod{
+  border-color: #c6c6c6;
+}
+/* .text-pure-white{
+  color: var(--pure-white);
+} */
