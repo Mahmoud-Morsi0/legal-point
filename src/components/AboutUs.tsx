@@ -167,9 +167,9 @@ export default function AboutUs() {
 
       {/* Team Section */}
       <section className="py-16">
-        <div className="container mx-auto px-6 py-8">
+        <div className="container mx-auto px-6 pt-8">
           <motion.h2 
-            className="text-4xl font-darker-grotesque font-bold text-cape-cod text-center mb-12"
+            className="text-4xl font-darker-grotesque font-bold text-cape-cod text-center mb-12 "
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -205,7 +205,7 @@ export default function AboutUs() {
                 <h3 className="text-2xl font-darker-grotesque font-bold text-cape-cod mb-2">
                   {t(`about.team.members.${member.key}.name`)}
                 </h3>
-                <p className="text-pure-mint font-semibold mb-2">
+                <p className="text-gray-700 font-semibold mb-2">
                   {t(`about.team.members.${member.key}.role`)}
                 </p>
                 <p className="text-gray-600">
