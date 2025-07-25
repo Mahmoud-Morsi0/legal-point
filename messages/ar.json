@@ -20,6 +20,7 @@
     "aboutUs": "من نحن",
     "resources": "الموارد",
     "clientStories": "قصص العملاء",
+    "blog": "المدونة",
     "contact": "اتصل بنا",
     "bookCall": "احجز مكالمة"
   },
@@ -234,6 +235,61 @@
     "copyright": "جميع الحقوق محفوظة.",
     "privacy": "سياسة الخصوصية",
     "terms": "شروط الخدمة"
+  },
+  "blog": {
+    "title": "المدونة القانونية",
+    "subtitle": "رؤى وتحديثات وتحليل خبراء في المسائل القانونية",
+    "createNew": "إنشاء منشور جديد",
+    "noPosts": "لا توجد منشورات مدونة بعد",
+    "noPostsDescription": "كن أول من يشارك الرؤى والمعرفة القانونية",
+    "createFirst": "إنشاء أول منشور",
+    "readMore": "اقرأ المزيد",
+    "backToList": "العودة إلى المدونة",
+    "notFound": "منشور المدونة غير موجود",
+    "editButton": "تعديل",
+    "delete": "حذف",
+    "deleteConfirm": "هل أنت متأكد من أنك تريد حذف منشور المدونة هذا؟",
+    "aboutAuthor": "عن الكاتب",
+    "create": {
+      "title": "إنشاء منشور مدونة جديد",
+      "subtitle": "شارك خبرتك القانونية ورؤيتك مع مجتمعنا",
+      "form": {
+        "title": "العنوان",
+        "titlePlaceholder": "أدخل عنوان منشور المدونة",
+        "excerpt": "الملخص",
+        "excerptPlaceholder": "ملخص مختصر لمنشور المدونة",
+        "content": "المحتوى",
+        "contentPlaceholder": "اكتب محتوى منشور المدونة هنا...",
+        "tags": "العلامات",
+        "tagsPlaceholder": "قانون الشركات، الأعمال، الدليل القانوني",
+        "tagsHelp": "افصل العلامات بفواصل",
+        "imageUrl": "رابط الصورة المميزة",
+        "imageUrlPlaceholder": "https://example.com/image.jpg",
+        "publish": "نشر المنشور",
+        "publishing": "جاري النشر...",
+        "cancel": "إلغاء"
+      }
+    },
+    "edit": {
+      "title": "تعديل منشور المدونة",
+      "subtitle": "حدث محتوى ومعلومات منشور المدونة",
+      "form": {
+        "title": "العنوان",
+        "titlePlaceholder": "أدخل عنوان منشور المدونة",
+        "excerpt": "الملخص",
+        "excerptPlaceholder": "ملخص مختصر لمنشور المدونة",
+        "content": "المحتوى",
+        "contentPlaceholder": "اكتب محتوى منشور المدونة هنا...",
+        "tags": "العلامات",
+        "tagsPlaceholder": "قانون الشركات، الأعمال، الدليل القانوني",
+        "tagsHelp": "افصل العلامات بفواصل",
+        "imageUrl": "رابط الصورة المميزة",
+        "imageUrlPlaceholder": "https://example.com/image.jpg",
+        "update": "تحديث المنشور",
+        "updating": "جاري التحديث...",
+        "cancel": "إلغاء"
+      }
+    }
   },
   "contact": {
     "title": "اتصل بنا",

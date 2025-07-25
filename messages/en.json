@@ -20,6 +20,7 @@
     "aboutUs": "About us",
     "resources": "Resources",
     "clientStories": "Client stories",
+    "blog": "Blog",
     "contact": "Contact",
     "bookCall": "BOOK A CALL"
   },
@@ -234,6 +235,61 @@
     "copyright": "All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service"
+  },
+  "blog": {
+    "title": "Legal Blog",
+    "subtitle": "Insights, updates, and expert analysis on legal matters",
+    "createNew": "Create New Post",
+    "noPosts": "No blog posts yet",
+    "noPostsDescription": "Be the first to share legal insights and knowledge",
+    "createFirst": "Create First Post",
+    "readMore": "Read More",
+    "backToList": "Back to Blog",
+    "notFound": "Blog post not found",
+    "editButton": "Edit",
+    "delete": "Delete",
+    "deleteConfirm": "Are you sure you want to delete this blog post?",
+    "aboutAuthor": "About the Author",
+    "create": {
+      "title": "Create New Blog Post",
+      "subtitle": "Share your legal expertise and insights with our community",
+      "form": {
+        "title": "Title",
+        "titlePlaceholder": "Enter the blog post title",
+        "excerpt": "Excerpt",
+        "excerptPlaceholder": "Brief summary of the blog post",
+        "content": "Content",
+        "contentPlaceholder": "Write your blog post content here...",
+        "tags": "Tags",
+        "tagsPlaceholder": "Corporate Law, Business, Legal Guide",
+        "tagsHelp": "Separate tags with commas",
+        "imageUrl": "Featured Image URL",
+        "imageUrlPlaceholder": "https://example.com/image.jpg",
+        "publish": "Publish Post",
+        "publishing": "Publishing...",
+        "cancel": "Cancel"
+      }
+    },
+    "edit": {
+      "title": "Edit Blog Post",
+      "subtitle": "Update your blog post content and information",
+      "form": {
+        "title": "Title",
+        "titlePlaceholder": "Enter the blog post title",
+        "excerpt": "Excerpt",
+        "excerptPlaceholder": "Brief summary of the blog post",
+        "content": "Content",
+        "contentPlaceholder": "Write your blog post content here...",
+        "tags": "Tags",
+        "tagsPlaceholder": "Corporate Law, Business, Legal Guide",
+        "tagsHelp": "Separate tags with commas",
+        "imageUrl": "Featured Image URL",
+        "imageUrlPlaceholder": "https://example.com/image.jpg",
+        "update": "Update Post",
+        "updating": "Updating...",
+        "cancel": "Cancel"
+      }
+    }
   },
   "contact": {
     "title": "Contact Us",

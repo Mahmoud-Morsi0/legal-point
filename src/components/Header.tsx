@@ -32,6 +32,7 @@ export default function Header() {
     { href: `/${locale}/about`, label: t('navigation.aboutUs') },
     { href: `/${locale}/resources`, label: t('navigation.resources') },
     { href: `/${locale}/client-stories`, label: t('navigation.clientStories') },
+    { href: `/${locale}/blog`, label: t('navigation.blog') },
     { href: `/${locale}/contact`, label: t('navigation.contact') },
   ];
 
