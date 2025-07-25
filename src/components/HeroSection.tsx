@@ -160,7 +160,7 @@ export default function HeroSection() {
 
           {/* Right Side - Navigation and Image */}
           <motion.div
-            className="relative bg-obsidian rounded-lg overflow-hidden shadow-lg col-span-3"
+            className="relative bg-obsidian rounded-lg overflow-hidden shadow-lg col-span-3 min-h-80"
             variants={rightSideVariants}
           >
             {/* Navigation Header */}
