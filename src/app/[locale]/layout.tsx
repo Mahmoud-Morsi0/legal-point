@@ -44,7 +44,7 @@ export default async function LocaleLayout({
       <NextIntlClientProvider messages={messages}>
                      <LocaleProvider>
                <Header />
-               <main className="flex-1">
+               <main className="flex-1" style={{fontFamily: roboto.style.fontFamily}}>
                  {children}
                </main>
                <Footer />
