@@ -176,3 +176,9 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.bg-obsidian{
+  background-color: var(--cape-cod);
+  color: var(--pure-white);
+  border-color: var(--foreground);
+}

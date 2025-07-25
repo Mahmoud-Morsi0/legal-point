@@ -2,6 +2,7 @@ import {NextIntlClientProvider} from 'next-intl';
 import {getMessages} from 'next-intl/server';
 import {notFound} from 'next/navigation';
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import {ThemeProvider} from '@/components/theme-provider';
 import {LocaleProvider} from '@/components/locale-provider';
 import '../globals.css';
@@ -41,10 +42,13 @@ export default async function LocaleLayout({
       disableTransitionOnChange
     >
       <NextIntlClientProvider messages={messages}>
-        <LocaleProvider>
-          <Header />
-          {children}
-        </LocaleProvider>
+                     <LocaleProvider>
+               <Header />
+               <main className="flex-1">
+                 {children}
+               </main>
+               <Footer />
+             </LocaleProvider>
       </NextIntlClientProvider>
     </ThemeProvider>
   );

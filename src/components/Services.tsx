@@ -1,9 +1,13 @@
 "use client";
 
 import {useTranslations} from 'next-intl';
+import { useLocale } from 'next-intl';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 export default function Services() {
   const t = useTranslations();
+  const locale = useLocale();
 
   const services = [
     {
@@ -89,9 +93,11 @@ export default function Services() {
           <p className="text-xl text-cape-cod mb-8 max-w-2xl mx-auto">
             {t('services.cta.description')}
           </p>
-          <button className="bg-cape-cod text-pure-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-obsidian transition-colors duration-300">
-            {t('services.cta.button')}
-          </button>
+          <Link href={`/${locale}/contact`}>
+            <Button className="bg-cape-cod text-pure-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-obsidian transition-colors duration-300">
+              {t('services.cta.button')}
+            </Button>
+          </Link>
         </div>
       </section>
     </div>

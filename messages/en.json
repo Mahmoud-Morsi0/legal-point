@@ -3,30 +3,24 @@
     "brandName": "⚖️ LEGAL POINT"
   },
   "hero": {
-    "title": "Expert Legal Solutions for Your Business",
-    "subtitle": "We provide comprehensive legal services tailored to meet your business needs. From contract review to compliance support, our experienced team is here to help.",
-    "features": {
-      "contractReview": "Contract Review & Analysis",
-      "compliance": "Compliance & Regulatory Support",
-      "consultation": "Business Legal Consultation"
+    "brandName": "⚖️ LEGAL POINT",
+    "description": "Legal Point is your reliable legal partner. We provide expert support to businesses and individuals, helping to resolve legal issues in the field of corporate law. International transactions and litigation.",
+    "services": {
+      "corporate": "CORPORATE & BUSINESS LAW",
+      "dispute": "DISPUTE RESOLUTION & LITIGATION",
+      "employment": "EMPLOYMENT & LABOR LAW"
     },
-    "cta": {
-      "button": "Get Started Today"
-    },
-    "stats": {
-      "title": "Trusted by 500+ Companies",
-      "subtitle": "Professional legal expertise you can rely on"
-    },
-    "testimonial": {
-      "text": "Outstanding legal support that helped us navigate complex regulations with confidence.",
-      "author": "Sarah Johnson, CEO TechCorp"
-    }
+    "viewAll": "VIEW ALL",
+    "viewAllCount": "-5",
+    "compassTitle": "Your compass in law",
+    "compassSubtitle": "Expert legal guidance for your business"
   },
   "navigation": {
     "services": "Services",
     "aboutUs": "About us",
     "resources": "Resources",
     "clientStories": "Client stories",
+    "contact": "Contact",
     "bookCall": "BOOK A CALL"
   },
   "services": {
@@ -219,6 +213,64 @@
     "edit": "Edit",
     "add": "Add",
     "remove": "Remove"
+  },
+  "footer": {
+    "brandName": "⚖️ LEGAL POINT",
+    "description": "Your trusted partner in legal excellence. We provide comprehensive legal solutions tailored to your needs.",
+    "cta": "Get Started Today",
+    "services": {
+      "title": "Our Services",
+      "corporate": "Corporate Law",
+      "contracts": "Contract Law",
+      "employment": "Employment Law",
+      "litigation": "Litigation"
+    },
+    "contact": {
+      "title": "Contact Info",
+      "email": "info@legalpoint.com",
+      "phone": "+1 (555) 123-4567",
+      "address": "123 Legal Street, Business District"
+    },
+    "copyright": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with our legal experts. We're here to help you with all your legal needs.",
+    "form": {
+      "title": "Send us a message",
+      "name": "Full Name",
+      "namePlaceholder": "Enter your full name",
+      "email": "Email Address",
+      "emailPlaceholder": "Enter your email address",
+      "phone": "Phone Number",
+      "phonePlaceholder": "Enter your phone number",
+      "countryCode": "Country Code",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your legal needs...",
+      "submit": "Send Message"
+    },
+    "info": {
+      "title": "Contact Information",
+      "address": {
+        "title": "Office Address",
+        "value": "123 Legal Street, Business District, City, Country"
+      },
+      "email": {
+        "title": "Email",
+        "value": "info@legalpoint.com"
+      },
+      "phone": {
+        "title": "Phone",
+        "value": "+1 (555) 123-4567"
+      }
+    },
+    "hours": {
+      "title": "Business Hours",
+      "weekdays": "Monday - Friday: 9:00 AM - 6:00 PM",
+      "weekend": "Saturday: 10:00 AM - 2:00 PM"
+    }
   },
   "status": {
     "loading": "Loading...",

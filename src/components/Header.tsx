@@ -3,18 +3,19 @@
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { Button } from '@/components/ui/button';
+import { motion } from 'framer-motion';
 
 export default function Header() {
   const t = useTranslations();
   const locale = useLocale();
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const router = useRouter();
   const switchLocale = locale === 'en' ? 'ar' : 'en';
   const switchPath = pathname.replace(`/${locale}`, `/${switchLocale}`);
 
@@ -31,10 +32,11 @@ export default function Header() {
     { href: `/${locale}/about`, label: t('navigation.aboutUs') },
     { href: `/${locale}/resources`, label: t('navigation.resources') },
     { href: `/${locale}/client-stories`, label: t('navigation.clientStories') },
+    { href: `/${locale}/contact`, label: t('navigation.contact') },
   ];
 
   return (
-    <header className="bg-cape-cod text-pure-white p-4">
+    <header className="bg-cape-cod container mx-auto text-pure-white p-4">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
@@ -42,7 +44,7 @@ export default function Header() {
             {t('header.brandName')}
           </span>
         </div>
-
+    
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-6">
           {navigationItems.map((item) => (
@@ -115,13 +117,10 @@ export default function Header() {
               >
                 {switchLocale.toUpperCase()}
               </Link>
-              <Button 
-                className="bg-pure-mint text-cape-cod px-4 py-2 rounded-full flex items-center justify-center hover:bg-obsidian hover:text-pure-white transition-colors font-mona-sans"
-                onClick={closeMenu}
-              >
-                {t('navigation.bookCall')} <span className="ml-2">▶</span>
+                <Button onClick={() => router.push('/contact')} className="cursor-pointer bg-pure-mint text-cape-cod px-4 py-2 rounded-full hover:bg-obsidian hover:text-pure-white transition-colors">
+                BOOK A CALL <span className="ml-2">▶</span>
               </Button>
-            </div>
+            </div>    
           </div>
         </div>
       )}
