@@ -36,6 +36,17 @@ export default function Header() {
     { href: `/${locale}/contact`, label: t('navigation.contact') },
   ];
 
+  // Check if a navigation item is active
+  const isActiveLink = (href: string) => {
+    if (href === `/${locale}` && pathname === `/${locale}`) {
+      return true;
+    }
+    if (href !== `/${locale}` && pathname.startsWith(href)) {
+      return true;
+    }
+    return false;
+  };
+
   // Animation variants
   const navItemVariants = {
     hidden: { opacity: 0, y: -20 },
@@ -124,32 +135,42 @@ export default function Header() {
     
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-6">
-          {navigationItems.map((item, index) => (
-            <motion.div
-              key={item.href}
-              custom={index}
-              variants={navItemVariants}
-              initial="hidden"
-              animate="visible"
-              whileHover={{ 
-                y: -2,
-                scale: 1.05,
-                transition: { duration: 0.2 }
-              }}
-            >
-              <Link
-                href={item.href}
-                className="hover:text-pure-mint transition-colors font-mona-sans relative group"
+          {navigationItems.map((item, index) => {
+            const isActive = isActiveLink(item.href);
+            return (
+              <motion.div
+                key={item.href}
+                custom={index}
+                variants={navItemVariants}
+                initial="hidden"
+                animate="visible"
+                whileHover={{ 
+                  y: -2,
+                  scale: 1.05,
+                  transition: { duration: 0.2 }
+                }}
               >
-                {item.label}
-                <motion.div
-                  className="absolute -bottom-1 left-0 w-0 h-0.5 bg-pure-mint group-hover:w-full transition-all duration-300"
-                  initial={{ width: 0 }}
-                  whileHover={{ width: "100%" }}
-                />
-              </Link>
-            </motion.div>
-          ))}
+                <Link
+                  href={item.href}
+                  className={`transition-colors font-mona-sans relative group ${
+                    isActive 
+                      ? 'text-pure-mint font-semibold' 
+                      : 'hover:text-pure-mint'
+                  }`}
+                >
+                  {item.label}
+                  <motion.div
+                    className={`absolute -bottom-1 left-0 h-0.5 bg-pure-mint transition-all duration-300 ${
+                      isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                    }`}
+                    initial={{ width: isActive ? "100%" : 0 }}
+                    animate={{ width: isActive ? "100%" : 0 }}
+                    whileHover={{ width: "100%" }}
+                  />
+                </Link>
+              </motion.div>
+            );
+          })}
         </nav>
 
         {/* Desktop Actions */}
@@ -253,21 +274,36 @@ export default function Header() {
             <div className="px-4 py-2 space-y-4 bg-cape-cod border-t border-obsidian">
               {/* Mobile Navigation */}
               <nav className="flex flex-col space-y-4">
-                {navigationItems.map((item, index) => (
-                  <motion.div
-                    key={item.href}
-                    variants={mobileItemVariants}
-                    custom={index}
-                  >
-                    <Link
-                      href={item.href}
-                      onClick={closeMenu}
-                      className="hover:text-pure-mint transition-colors py-2 font-mona-sans block"
+                {navigationItems.map((item, index) => {
+                  const isActive = isActiveLink(item.href);
+                  return (
+                    <motion.div
+                      key={item.href}
+                      variants={mobileItemVariants}
+                      custom={index}
                     >
-                      {item.label}
-                    </Link>
-                  </motion.div>
-                ))}
+                      <Link
+                        href={item.href}
+                        onClick={closeMenu}
+                        className={`transition-colors py-2 font-mona-sans block relative ${
+                          isActive 
+                            ? 'text-pure-mint font-semibold' 
+                            : 'hover:text-pure-mint'
+                        }`}
+                      >
+                        {item.label}
+                        {isActive && (
+                          <motion.div
+                            className="absolute left-0 bottom-0 w-full h-0.5 bg-pure-mint"
+                            initial={{ width: 0 }}
+                            animate={{ width: "100%" }}
+                            transition={{ duration: 0.3 }}
+                          />
+                        )}
+                      </Link>
+                    </motion.div>
+                  );
+                })}
               </nav>
 
               {/* Mobile Actions */}
