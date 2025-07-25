@@ -38,7 +38,7 @@ export default function Header() {
 
   return (
     <header className="bg-cape-cod container mx-auto text-pure-white p-6 ">
-      <div className="max-w-8xl mx-auto flex justify-between items-center">
+      <div className=" mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
           <span className="text-xl md:text-2xl font-mona-sans font-bold">
