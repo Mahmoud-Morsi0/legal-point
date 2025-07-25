@@ -7,16 +7,23 @@ import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
-interface BlogPost {
-  id: string;
+interface LocalizedContent {
   title: string;
   excerpt: string;
   content: string;
+}
+
+interface BlogPost {
+  id: string;
   author: string;
   createdAt: string;
   updatedAt: string;
   tags: string[];
   imageUrl?: string;
+  content: {
+    en: LocalizedContent;
+    ar: LocalizedContent;
+  };
 }
 
 export default function BlogPage() {
@@ -31,33 +38,60 @@ export default function BlogPage() {
     const mockPosts: BlogPost[] = [
       {
         id: '1',
-        title: 'Understanding Corporate Law Fundamentals',
-        excerpt: 'A comprehensive guide to the basics of corporate law and how it affects your business operations.',
-        content: 'Full content here...',
         author: 'Sarah Johnson',
         createdAt: '2024-01-15',
         updatedAt: '2024-01-15',
-        tags: ['Corporate Law', 'Business', 'Legal Guide']
+        tags: ['Corporate Law', 'Business', 'Legal Guide'],
+        content: {
+          en: {
+            title: 'Understanding Corporate Law Fundamentals',
+            excerpt: 'A comprehensive guide to the basics of corporate law and how it affects your business operations.',
+            content: 'Full content here...'
+          },
+          ar: {
+            title: 'فهم أساسيات قانون الشركات',
+            excerpt: 'دليل شامل لأساسيات قانون الشركات وكيفية تأثيره على عمليات عملك.',
+            content: 'المحتوى الكامل هنا...'
+          }
+        }
       },
       {
         id: '2',
-        title: 'Employment Law Updates 2024',
-        excerpt: 'Stay updated with the latest changes in employment legislation and what it means for employers.',
-        content: 'Full content here...',
         author: 'Michael Chen',
         createdAt: '2024-01-10',
         updatedAt: '2024-01-10',
-        tags: ['Employment Law', 'Updates', 'HR']
+        tags: ['Employment Law', 'Updates', 'HR'],
+        content: {
+          en: {
+            title: 'Employment Law Updates 2024',
+            excerpt: 'Stay updated with the latest changes in employment legislation and what it means for employers.',
+            content: 'Full content here...'
+          },
+          ar: {
+            title: 'تحديثات قانون العمل ٢٠٢٤',
+            excerpt: 'ابق على اطلاع بأحدث التغييرات في تشريعات العمل وما تعنيه لأصحاب العمل.',
+            content: 'المحتوى الكامل هنا...'
+          }
+        }
       },
       {
         id: '3',
-        title: 'Intellectual Property Protection Strategies',
-        excerpt: 'Learn how to protect your intellectual property and navigate the complex world of IP law.',
-        content: 'Full content here...',
         author: 'Emily Rodriguez',
         createdAt: '2024-01-05',
         updatedAt: '2024-01-05',
-        tags: ['IP Law', 'Protection', 'Strategy']
+        tags: ['IP Law', 'Protection', 'Strategy'],
+        content: {
+          en: {
+            title: 'Intellectual Property Protection Strategies',
+            excerpt: 'Learn how to protect your intellectual property and navigate the complex world of IP law.',
+            content: 'Full content here...'
+          },
+          ar: {
+            title: 'استراتيجيات حماية الملكية الفكرية',
+            excerpt: 'تعلم كيفية حماية ملكيتك الفكرية والتنقل في عالم قانون الملكية الفكرية المعقد.',
+            content: 'المحتوى الكامل هنا...'
+          }
+        }
       }
     ];
 
@@ -162,15 +196,15 @@ export default function BlogPage() {
                       )}
                     </div>
 
-                    {/* Title */}
-                    <h3 className="text-xl font-bold text-cape-cod mb-3 line-clamp-2">
-                      {post.title}
-                    </h3>
+                                          {/* Title */}
+                      <h3 className="text-xl font-bold text-cape-cod mb-3 line-clamp-2">
+                        {post.content[locale as keyof typeof post.content].title}
+                      </h3>
 
-                    {/* Excerpt */}
-                    <p className="text-obsidian mb-4 line-clamp-3">
-                      {post.excerpt}
-                    </p>
+                      {/* Excerpt */}
+                      <p className="text-obsidian mb-4 line-clamp-3">
+                        {post.content[locale as keyof typeof post.content].excerpt}
+                      </p>
 
                     {/* Meta Info */}
                     <div className="flex items-center justify-between text-sm text-gray-500 mb-4">

@@ -7,16 +7,23 @@ import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
-interface BlogPost {
-  id: string;
+interface LocalizedContent {
   title: string;
   excerpt: string;
   content: string;
+}
+
+interface BlogPost {
+  id: string;
   author: string;
   createdAt: string;
   updatedAt: string;
   tags: string[];
   imageUrl?: string;
+  content: {
+    en: LocalizedContent;
+    ar: LocalizedContent;
+  };
 }
 
 export default function EditBlogPage() {
@@ -42,33 +49,60 @@ export default function EditBlogPage() {
     const mockPosts: BlogPost[] = [
       {
         id: '1',
-        title: 'Understanding Corporate Law Fundamentals',
-        excerpt: 'A comprehensive guide to the basics of corporate law and how it affects your business operations.',
-        content: 'Corporate law is a complex and multifaceted area of legal practice...',
         author: 'Sarah Johnson',
         createdAt: '2024-01-15',
         updatedAt: '2024-01-15',
-        tags: ['Corporate Law', 'Business', 'Legal Guide']
+        tags: ['Corporate Law', 'Business', 'Legal Guide'],
+        content: {
+          en: {
+            title: 'Understanding Corporate Law Fundamentals',
+            excerpt: 'A comprehensive guide to the basics of corporate law and how it affects your business operations.',
+            content: 'Corporate law is a complex and multifaceted area of legal practice...'
+          },
+          ar: {
+            title: 'فهم أساسيات قانون الشركات',
+            excerpt: 'دليل شامل لأساسيات قانون الشركات وكيفية تأثيره على عمليات عملك.',
+            content: 'قانون الشركات هو مجال معقد ومتعدد الأوجه من الممارسة القانونية...'
+          }
+        }
       },
       {
         id: '2',
-        title: 'Employment Law Updates 2024',
-        excerpt: 'Stay updated with the latest changes in employment legislation and what it means for employers.',
-        content: 'Full content for employment law updates...',
         author: 'Michael Chen',
         createdAt: '2024-01-10',
         updatedAt: '2024-01-10',
-        tags: ['Employment Law', 'Updates', 'HR']
+        tags: ['Employment Law', 'Updates', 'HR'],
+        content: {
+          en: {
+            title: 'Employment Law Updates 2024',
+            excerpt: 'Stay updated with the latest changes in employment legislation and what it means for employers.',
+            content: 'Full content for employment law updates...'
+          },
+          ar: {
+            title: 'تحديثات قانون العمل ٢٠٢٤',
+            excerpt: 'ابق على اطلاع بأحدث التغييرات في تشريعات العمل وما تعنيه لأصحاب العمل.',
+            content: 'المحتوى الكامل لتحديثات قانون العمل...'
+          }
+        }
       },
       {
         id: '3',
-        title: 'Intellectual Property Protection Strategies',
-        excerpt: 'Learn how to protect your intellectual property and navigate the complex world of IP law.',
-        content: 'Full content for IP protection...',
         author: 'Emily Rodriguez',
         createdAt: '2024-01-05',
         updatedAt: '2024-01-05',
-        tags: ['IP Law', 'Protection', 'Strategy']
+        tags: ['IP Law', 'Protection', 'Strategy'],
+        content: {
+          en: {
+            title: 'Intellectual Property Protection Strategies',
+            excerpt: 'Learn how to protect your intellectual property and navigate the complex world of IP law.',
+            content: 'Full content for IP protection...'
+          },
+          ar: {
+            title: 'استراتيجيات حماية الملكية الفكرية',
+            excerpt: 'تعلم كيفية حماية ملكيتك الفكرية والتنقل في عالم قانون الملكية الفكرية المعقد.',
+            content: 'المحتوى الكامل لحماية الملكية الفكرية...'
+          }
+        }
       }
     ];
 
@@ -76,15 +110,15 @@ export default function EditBlogPage() {
     if (post) {
       setBlogPost(post);
       setFormData({
-        title: post.title,
-        excerpt: post.excerpt,
-        content: post.content,
+        title: post.content[locale as keyof typeof post.content].title,
+        excerpt: post.content[locale as keyof typeof post.content].excerpt,
+        content: post.content[locale as keyof typeof post.content].content,
         tags: post.tags.join(', '),
         imageUrl: post.imageUrl || ''
       });
     }
     setIsLoading(false);
-  }, [blogId]);
+  }, [blogId, locale]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
