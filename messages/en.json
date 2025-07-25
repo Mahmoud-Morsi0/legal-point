@@ -1,0 +1,230 @@
+{
+  "header": {
+    "brandName": "⚖️ LEGAL POINT"
+  },
+  "hero": {
+    "title": "Expert Legal Solutions for Your Business",
+    "subtitle": "We provide comprehensive legal services tailored to meet your business needs. From contract review to compliance support, our experienced team is here to help.",
+    "features": {
+      "contractReview": "Contract Review & Analysis",
+      "compliance": "Compliance & Regulatory Support",
+      "consultation": "Business Legal Consultation"
+    },
+    "cta": {
+      "button": "Get Started Today"
+    },
+    "stats": {
+      "title": "Trusted by 500+ Companies",
+      "subtitle": "Professional legal expertise you can rely on"
+    },
+    "testimonial": {
+      "text": "Outstanding legal support that helped us navigate complex regulations with confidence.",
+      "author": "Sarah Johnson, CEO TechCorp"
+    }
+  },
+  "navigation": {
+    "services": "Services",
+    "aboutUs": "About us",
+    "resources": "Resources",
+    "clientStories": "Client stories",
+    "bookCall": "BOOK A CALL"
+  },
+  "services": {
+    "title": "Our Legal Services",
+    "subtitle": "Comprehensive legal solutions tailored to your needs",
+    "cards": {
+      "corporate": {
+        "title": "Corporate Law",
+        "description": "Expert guidance on business formation, contracts, and corporate governance"
+      },
+      "contracts": {
+        "title": "Contract Law",
+        "description": "Drafting, reviewing, and negotiating contracts to protect your interests"
+      },
+      "employment": {
+        "title": "Employment Law",
+        "description": "Workplace legal matters, compliance, and employee rights protection"
+      },
+      "intellectual": {
+        "title": "Intellectual Property",
+        "description": "Trademarks, patents, copyrights, and IP strategy development"
+      },
+      "realEstate": {
+        "title": "Real Estate Law",
+        "description": "Property transactions, leases, and real estate dispute resolution"
+      },
+      "litigation": {
+        "title": "Litigation",
+        "description": "Court representation and dispute resolution across all practice areas"
+      }
+    },
+    "cta": {
+      "title": "Ready to Get Started?",
+      "description": "Schedule a consultation to discuss your legal needs",
+      "button": "Schedule Consultation"
+    }
+  },
+  "about": {
+    "title": "About Legal Point",
+    "subtitle": "Your trusted partner in legal excellence",
+    "mission": {
+      "title": "Our Mission",
+      "description": "To provide accessible, high-quality legal services that empower businesses and individuals to achieve their goals while navigating complex legal landscapes with confidence."
+    },
+    "values": {
+      "title": "Our Values",
+      "items": {
+        "integrity": {
+          "title": "Integrity",
+          "description": "Unwavering commitment to ethical practices and transparency"
+        },
+        "excellence": {
+          "title": "Excellence",
+          "description": "Delivering exceptional legal services with attention to detail"
+        },
+        "innovation": {
+          "title": "Innovation",
+          "description": "Embracing modern legal technology and creative solutions"
+        },
+        "clientFocus": {
+          "title": "Client Focus",
+          "description": "Putting our clients' needs first in everything we do"
+        }
+      }
+    },
+    "team": {
+      "title": "Our Team",
+      "members": {
+        "sarah": {
+          "name": "Sarah Johnson",
+          "role": "Managing Partner",
+          "description": "15+ years of corporate law experience"
+        },
+        "michael": {
+          "name": "Michael Chen",
+          "role": "Senior Associate",
+          "description": "Specialist in intellectual property law"
+        },
+        "emily": {
+          "name": "Emily Rodriguez",
+          "role": "Associate",
+          "description": "Expert in employment and contract law"
+        }
+      }
+    },
+    "stats": {
+      "clients": "500+",
+      "cases": "1000+",
+      "years": "10+",
+      "successRate": "95%"
+    }
+  },
+  "resources": {
+    "title": "Legal Resources",
+    "subtitle": "Knowledge is power. Access our comprehensive legal resources.",
+    "categories": {
+      "guides": {
+        "title": "Legal Guides",
+        "description": "Comprehensive guides on various legal topics"
+      },
+      "templates": {
+        "title": "Document Templates",
+        "description": "Ready-to-use legal document templates"
+      },
+      "blog": {
+        "title": "Blog & Articles",
+        "description": "Latest legal insights and industry updates"
+      }
+    },
+    "featured": {
+      "title": "Featured Resources",
+      "items": {
+        "startup": {
+          "title": "Startup Legal Checklist",
+          "description": "Essential legal considerations for new businesses"
+        },
+        "contract": {
+          "title": "Contract Review Guide",
+          "description": "How to review and negotiate contracts effectively"
+        },
+        "employment": {
+          "title": "Employment Law Updates",
+          "description": "Recent changes in employment legislation"
+        }
+      }
+    },
+    "newsletter": {
+      "title": "Stay Updated",
+      "description": "Get the latest legal insights delivered to your inbox",
+      "placeholder": "Enter your email",
+      "button": "Subscribe"
+    }
+  },
+  "clientStories": {
+    "title": "Client Success Stories",
+    "subtitle": "Real results for real clients",
+    "featured": {
+      "title": "Featured Success Story",
+      "company": "TechStart Inc.",
+      "challenge": "Facing complex IP litigation",
+      "solution": "Comprehensive IP strategy and litigation support",
+      "result": "Successfully defended IP rights and secured favorable settlement"
+    },
+    "stories": {
+      "retail": {
+        "title": "Retail Chain Expansion",
+        "description": "Legal support for national expansion"
+      },
+      "tech": {
+        "title": "Tech Startup Funding",
+        "description": "Series A funding round legal guidance"
+      },
+      "manufacturing": {
+        "title": "Manufacturing Compliance",
+        "description": "Regulatory compliance and risk management"
+      }
+    },
+    "testimonials": {
+      "title": "What Our Clients Say",
+      "items": [
+        {
+          "text": "Legal Point provided exceptional guidance throughout our merger process. Their expertise was invaluable.",
+          "author": "Jennifer Smith",
+          "company": "CEO, InnovateCorp"
+        },
+        {
+          "text": "Professional, responsive, and results-driven. Highly recommend their services.",
+          "author": "David Wilson",
+          "company": "Founder, StartupXYZ"
+        },
+        {
+          "text": "They made complex legal matters understandable and manageable for our business.",
+          "author": "Maria Garcia",
+          "company": "COO, GrowthTech"
+        }
+      ]
+    }
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "contactUs": "Contact Us",
+    "readMore": "Read More",
+    "download": "Download",
+    "viewAll": "View All",
+    "close": "Close",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "remove": "Remove"
+  },
+  "status": {
+    "loading": "Loading...",
+    "success": "Success!",
+    "error": "An error occurred",
+    "noData": "No data available",
+    "notFound": "Not found"
+  }
+} 
