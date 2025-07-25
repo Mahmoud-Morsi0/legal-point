@@ -10,30 +10,30 @@ import { useTranslations } from 'next-intl';
  */
 export function useTranslationValidation(requiredKeys: string[]) {
   const t = useTranslations();
-  
+
   if (process.env.NODE_ENV === 'development') {
     const missingKeys: string[] = [];
-    
+
     requiredKeys.forEach(key => {
       try {
         t(key);
-      } catch (error) {
+      } catch {
         missingKeys.push(key);
       }
     });
-    
+
     if (missingKeys.length > 0) {
       console.warn('Missing translation keys:', missingKeys);
     }
   }
-  
+
   return t;
 }
 
 /**
  * Utility to check if a translation key exists
  */
-export function hasTranslation(t: any, key: string): boolean {
+export function hasTranslation(t: ReturnType<typeof useTranslations>, key: string): boolean {
   try {
     t(key);
     return true;
@@ -45,7 +45,7 @@ export function hasTranslation(t: any, key: string): boolean {
 /**
  * Utility to get translation with fallback
  */
-export function getTranslationWithFallback(t: any, key: string, fallback: string): string {
+export function getTranslationWithFallback(t: ReturnType<typeof useTranslations>, key: string, fallback: string): string {
   try {
     return t(key);
   } catch {
@@ -71,28 +71,28 @@ export const TRANSLATION_PATTERNS = {
     SUBTITLE: (component: string) => `${component}.subtitle`,
     DESCRIPTION: (component: string) => `${component}.description`,
   },
-  
+
   // CTA patterns
   CTA: {
     BUTTON: (component: string) => `${component}.cta.button`,
     LINK: (component: string) => `${component}.cta.link`,
     TEXT: (component: string) => `${component}.cta.text`,
   },
-  
+
   // Feature patterns
   FEATURES: {
     TITLE: (component: string) => `${component}.features.title`,
     LIST: (component: string) => `${component}.features.list`,
     ITEM: (component: string, index: number) => `${component}.features.items.${index}`,
   },
-  
+
   // Card patterns
   CARDS: {
     TITLE: (component: string, card: string) => `${component}.cards.${card}.title`,
     DESCRIPTION: (component: string, card: string) => `${component}.cards.${card}.description`,
     CTA: (component: string, card: string) => `${component}.cards.${card}.cta`,
   },
-  
+
   // Form patterns
   FORM: {
     LABEL: (component: string, field: string) => `${component}.form.${field}.label`,
@@ -100,13 +100,13 @@ export const TRANSLATION_PATTERNS = {
     ERROR: (component: string, field: string) => `${component}.form.${field}.error`,
     SUBMIT: (component: string) => `${component}.form.submit`,
   },
-  
+
   // Navigation patterns
   NAV: {
     ITEM: (item: string) => `navigation.${item}`,
     BREADCRUMB: (item: string) => `breadcrumb.${item}`,
   },
-  
+
   // Common actions
   COMMON: {
     LEARN_MORE: 'common.learnMore',
@@ -123,7 +123,7 @@ export const TRANSLATION_PATTERNS = {
     ADD: 'common.add',
     REMOVE: 'common.remove',
   },
-  
+
   // Status messages
   STATUS: {
     LOADING: 'status.loading',
@@ -144,7 +144,7 @@ export type TranslationPattern = typeof TRANSLATION_PATTERNS;
  */
 export function useCommonTranslations() {
   const t = useTranslations();
-  
+
   return {
     learnMore: t(TRANSLATION_PATTERNS.COMMON.LEARN_MORE),
     getStarted: t(TRANSLATION_PATTERNS.COMMON.GET_STARTED),
@@ -167,7 +167,7 @@ export function useCommonTranslations() {
  */
 export function useStatusTranslations() {
   const t = useTranslations();
-  
+
   return {
     loading: t(TRANSLATION_PATTERNS.STATUS.LOADING),
     success: t(TRANSLATION_PATTERNS.STATUS.SUCCESS),
@@ -194,20 +194,20 @@ export function suggestTranslationKeys(componentName: string): Record<string, st
 /**
  * Debug utility to log all translation keys for a component
  */
-export function debugTranslations(t: any, componentName: string) {
+export function debugTranslations(t: ReturnType<typeof useTranslations>, componentName: string) {
   if (process.env.NODE_ENV === 'development') {
     const suggestions = suggestTranslationKeys(componentName);
     const existingKeys: string[] = [];
     const missingKeys: string[] = [];
-    
-    Object.entries(suggestions).forEach(([key, translationKey]) => {
+
+    Object.entries(suggestions).forEach(([, translationKey]) => {
       if (hasTranslation(t, translationKey)) {
         existingKeys.push(translationKey);
       } else {
         missingKeys.push(translationKey);
       }
     });
-    
+
     console.group(`Translation Debug: ${componentName}`);
     console.log('Existing keys:', existingKeys);
     console.log('Missing keys:', missingKeys);

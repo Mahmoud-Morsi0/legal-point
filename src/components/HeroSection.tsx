@@ -1,7 +1,6 @@
 "use client";
 
 import { useTranslations } from 'next-intl';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 
 export default function HeroSection() {
@@ -49,13 +48,7 @@ export default function HeroSection() {
           <div className="relative bg-cape-cod rounded-lg overflow-hidden shadow-lg">
             {/* Background Image */}
             <div className="absolute inset-0">
-              <Image 
-                src="/images/hero-legal.jpg" 
-                alt="Legal Services" 
-                fill
-                className="object-cover opacity-20"
-                priority
-              />
+              <div className="w-full h-full bg-gradient-to-br from-cape-cod to-obsidian opacity-80"></div>
             </div>
             
             {/* Overlay Text */}

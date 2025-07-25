@@ -3,6 +3,7 @@ import {getMessages} from 'next-intl/server';
 import {notFound} from 'next/navigation';
 import Header from '@/components/Header';
 import {ThemeProvider} from '@/components/theme-provider';
+import {LocaleProvider} from '@/components/locale-provider';
 import '../globals.css';
 
 import { Inter, Roboto } from 'next/font/google'
@@ -33,20 +34,18 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'} suppressHydrationWarning>
-      <body className={`${inter.className} ${roboto.className}`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <NextIntlClientProvider messages={messages}>
-            <Header />
-            {children}
-          </NextIntlClientProvider>
-        </ThemeProvider>
-      </body>
-    </html>
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      disableTransitionOnChange
+    >
+      <NextIntlClientProvider messages={messages}>
+        <LocaleProvider>
+          <Header />
+          {children}
+        </LocaleProvider>
+      </NextIntlClientProvider>
+    </ThemeProvider>
   );
 } 

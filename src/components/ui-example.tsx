@@ -1,13 +1,10 @@
 "use client";
 
-import { useTranslations } from 'next-intl';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 export default function UIExample() {
-  const t = useTranslations();
-
   return (
     <div className="container mx-auto p-4 md:p-8 space-y-6 md:space-y-8">
       <div className="text-center">
